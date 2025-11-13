@@ -1,25 +1,13 @@
-public class Customer {
-    private int id;
-    private String name;
+class Customer:
+    def __init__(self, customer_id, name):
+        self.__id = customer_id      # private variable
+        self.__name = name           # private variable
 
-    public Customer(int id, String name) {
-        this.id = id;
-        this.name = name;
-    }
+    def get_id(self):
+        return self.__id
 
-    public int getId() {
-        return id;
-    }
+    def get_name(self):
+        return self.__name
 
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public String toString() {
-        return "Customer{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
-    }
-}
+    def __str__(self):
+        return f"Customer(id={self.__id}, name='{self.__name}')"
